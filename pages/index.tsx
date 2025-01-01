@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { observer, Observer, useLocalObservable } from "mobx-react-lite";
 import Querty from "@/components/Qwerty";
 import PuzzleStore from "@/stores/PuzzleStore";
