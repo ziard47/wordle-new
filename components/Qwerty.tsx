@@ -1,11 +1,19 @@
 import { observer } from "mobx-react-lite";
 
-export default observer(function Querty({ store }) {
+interface QwertyProps {
+  store: {
+    exactGuesses: string[];
+    inexactGuesses: string[];
+    allGuesses: string[];
+  };
+}
+
+const Querty: React.FC<QwertyProps> = observer(({ store }) => {
   const qwerty = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
   return (
     <div>
       {qwerty.map((row) => (
-        <div className="flex justify-center">
+        <div className="flex justify-center" key={row}>
           {row.split("").map((char) => {
             const bgColor = store.exactGuesses.includes(char)
               ? "bg-green-400"
@@ -17,6 +25,7 @@ export default observer(function Querty({ store }) {
 
             return (
               <div
+                key={char}
                 className={`m-px flex h-10 w-10 items-center justify-center uppercase rounded-md ${bgColor} text-black`}
               >
                 {char}
@@ -28,3 +37,5 @@ export default observer(function Querty({ store }) {
     </div>
   );
 });
+
+export default Querty;

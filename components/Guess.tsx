@@ -12,6 +12,7 @@ export default function Guess({ isGuessed, guess, word }) {
 
         return (
           <div
+            key={`tile-${i}`}
             className={`h-16 w-16 border border-gray-400 font-bold text-white uppercase flex items-center justify-center ${bgColor}`}
           >
             {guess[i]}
