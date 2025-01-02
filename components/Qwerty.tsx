@@ -19,7 +19,7 @@ export default observer(function Qwerty({ store }: QwertyProps) {
   };
 
   return (
-    <div className="flex flex-col space-y-2">
+    <div className="flex flex-col space-y-2 mt-5">
       {/* Regular rows */}
       {qwerty.map((row, rowIndex) => (
         <div key={`row-${rowIndex}`} className="flex justify-center">
@@ -36,7 +36,8 @@ export default observer(function Qwerty({ store }: QwertyProps) {
               <button
                 key={`key-${char}`}
                 onClick={() => handleKeyPress(char)}
-                className={`m-px flex h-8 w-8 items-center justify-center uppercase rounded-md ${bgColor} text-black`}
+                className={`m-0.5 flex h-8 w-8 items-center justify-center uppercase rounded-md ${bgColor} text-black`}
+                tabIndex={-1}
               >
                 {char}
               </button>
@@ -50,12 +51,14 @@ export default observer(function Qwerty({ store }: QwertyProps) {
         <button
           onClick={() => handleKeyPress("Enter")}
           className="flex h-8 w-16 items-center justify-center uppercase rounded-md bg-gray-200 text-black"
+          tabIndex={-1}
         >
           Enter
         </button>
         <button
           onClick={() => handleKeyPress("Backspace")}
           className="flex h-8 w-16 items-center justify-center uppercase rounded-md bg-gray-200 text-black"
+          tabIndex={-1}
         >
           ⌫
         </button>
