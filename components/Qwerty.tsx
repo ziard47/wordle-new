@@ -11,7 +11,7 @@ interface QwertyProps {
 const Querty: React.FC<QwertyProps> = observer(({ store }) => {
   const qwerty = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
   return (
-    <div>
+    <div className="mt-5">
       {qwerty.map((row) => (
         <div className="flex justify-center" key={row}>
           {row.split("").map((char) => {
