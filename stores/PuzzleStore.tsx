@@ -10,7 +10,7 @@ export default {
   },
 
   get lost() {
-    return this.currentGuess == 6;
+    return this.currentGuess === 6 && !this.won;
   },
 
   get allGuesses() {
